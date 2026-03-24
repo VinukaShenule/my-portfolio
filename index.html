@@ -1,302 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Vinuka Shenule Akarawita — Full-Stack Developer and Computer Science Undergraduate at IIT, Sri Lanka.">
-    <title>Vinuka Shenule | Full-Stack Developer</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vinuka Shenule Akarawita — Full-Stack Developer & Computer Science Undergraduate at IIT Sri Lanka.">
+  <title>Vinuka Shenule | Full-Stack Developer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- Page Loader -->
-    <div class="page-loader" id="loader">
-        <p class="loader-text">Vinuka<span>.</span></p>
+  <!-- Ambient blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <!-- Page Loader -->
+  <div id="loader">
+    <p class="loader-name">Vinuka<span>.</span></p>
+    <div class="loader-bar"><div class="loader-bar-fill" id="loaderFill"></div></div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="c-dot"  id="cDot"></div>
+  <div class="c-ring" id="cRing"></div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#skills"     onclick="closeMob()">Skills</a>
+    <a href="#projects"   onclick="closeMob()">Work</a>
+    <a href="#background" onclick="closeMob()">Background</a>
+    <a href="#contact"    onclick="closeMob()">Contact</a>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo">Vinuka<em>.</em></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#skills"     class="hl">Skills</a>
+        <a href="#projects"   class="hl">Work</a>
+        <a href="#background" class="hl">Background</a>
+        <a href="#contact"    class="nav-cta">Get In Touch</a>
+      </div>
+      <div class="hamburger" id="hamburger" onclick="toggleMob()">
+        <span></span><span></span><span></span>
+      </div>
     </div>
+  </nav>
 
-    <!-- Custom Cursor -->
-    <div class="cursor-dot" id="cursorDot"></div>
-    <div class="cursor-ring" id="cursorRing"></div>
+  <!-- ===== HERO ===== -->
+  <header class="section hero" id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="container hero-grid">
 
-    <!-- ===== NAVBAR ===== -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-inner">
-            <a href="#" class="nav-logo">Vinuka<span>.</span></a>
-            <div class="nav-links">
-                <a href="#skills" class="hide-mobile">Skills</a>
-                <a href="#projects" class="hide-mobile">Work</a>
-                <a href="#background" class="hide-mobile">Background</a>
-                <a href="#contact" class="btn-nav">Get In Touch</a>
-            </div>
+      <!-- Left -->
+      <div class="hero-copy">
+        <div class="hero-badge">Available for opportunities</div>
+        <h1 class="hero-h1">
+          Vinuka<br>
+          <span class="gradient-text">Shenule</span><br>
+          Akarawita
+        </h1>
+        <p class="hero-role">
+          <span id="typed"></span><span class="typed-cursor"></span>
+        </p>
+        <p class="hero-desc">
+          CS Undergraduate at IIT Sri Lanka building real-world applications.
+          Passionate about clean architecture, meaningful user experiences,
+          and turning complex problems into elegant software.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-sky">View My Work →</a>
+          <a href="#contact"  class="btn-ghost">Get In Touch</a>
         </div>
-    </nav>
-
-    <!-- ===== HERO ===== -->
-    <header class="hero section">
-        <div class="container hero-grid">
-
-            <!-- Left copy -->
-            <div class="hero-copy">
-                <span class="hero-eyebrow">Based in Panagoda, Homagama · Open to Opportunities</span>
-                <h1 class="hero-heading">
-                    Vinuka Shenule<br>
-                    <span class="shimmer">Akarawita</span>
-                </h1>
-                <p class="hero-sub">
-                    Full-Stack Developer &amp; Computer Science Undergraduate at IIT.
-                    Passionate about building clean, purposeful software.
-                </p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn-primary">View My Work</a>
-                    <a href="#background" class="btn-secondary">My Background</a>
-                </div>
-            </div>
-
-            <!-- Right — profile photo -->
-            <div class="hero-photo-wrap">
-                <div class="hero-photo-ring"></div>
-                <div class="hero-photo-inner">
-                    <img src="assets/profile.jpg" alt="Vinuka Shenule Akarawita — Professional Photo">
-                </div>
-            </div>
-
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num" data-target="3">0</div>
+            <div class="stat-label">Projects Built</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" data-target="4">0</div>
+            <div class="stat-label">Certifications</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" data-target="5">0</div>
+            <div class="stat-label">Tech Stacks</div>
+          </div>
         </div>
-    </header>
+      </div>
 
-    <!-- ===== SKILLS ===== -->
-    <section id="skills" class="section">
-        <div class="container">
-            <div class="reveal">
-                <p class="section-label">Expertise</p>
-                <h2 class="section-title">Technical &amp; Professional Skills</h2>
-                <p class="section-sub">A balanced toolkit for building modern, reliable software — from backend logic to
-                    pixel-perfect interfaces.</p>
-            </div>
-
-            <div class="skills-wrap skills-grid">
-                <div class="skill-card reveal delay-1">
-                    <span class="skill-icon">💻</span>
-                    <h3>Programming</h3>
-                    <p>Backend and frontend expertise across multiple languages and paradigms.</p>
-                    <div class="pill-group">
-                        <span class="pill">Java</span>
-                        <span class="pill">Python</span>
-                        <span class="pill">JavaScript</span>
-                        <span class="pill">SQL</span>
-                        <span class="pill">HTML / CSS</span>
-                    </div>
-                </div>
-                <div class="skill-card reveal delay-2">
-                    <span class="skill-icon">⚙️</span>
-                    <h3>Tools &amp; Platforms</h3>
-                    <p>Comfortable in modern development and design environments for rapid iteration.</p>
-                    <div class="pill-group">
-                        <span class="pill">IntelliJ</span>
-                        <span class="pill">VS Code</span>
-                        <span class="pill">MySQL</span>
-                        <span class="pill">Figma</span>
-                        <span class="pill">Draw.io</span>
-                    </div>
-                </div>
-                <div class="skill-card reveal delay-3">
-                    <span class="skill-icon">🧠</span>
-                    <h3>Core Competencies</h3>
-                    <p>Soft skills that complement technical ability in team and client environments.</p>
-                    <div class="pill-group">
-                        <span class="pill">Problem Solving</span>
-                        <span class="pill">Leadership</span>
-                        <span class="pill">Critical Thinking</span>
-                        <span class="pill">Creativity</span>
-                    </div>
-                </div>
-            </div>
+      <!-- Right — Photo -->
+      <div class="hero-photo-col">
+        <div class="photo-wrapper">
+          <div class="photo-ring"></div>
+          <div class="photo-glow"></div>
+          <div class="photo-frame">
+            <img src="assets/profile.jpg" alt="Vinuka Shenule Akarawita — Professional Photo">
+          </div>
+          <div class="photo-chip photo-chip-1">
+            <span class="chip-dot"></span> CS Undergraduate
+          </div>
+          <div class="photo-chip photo-chip-2">
+            <span class="chip-dot"></span> IIT Sri Lanka
+          </div>
+          <div class="photo-chip photo-chip-3">
+            <span class="chip-dot"></span> Flutter · Java · Python
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </header>
 
-    <!-- ===== PROJECTS ===== -->
-    <section id="projects" class="section bg-alt">
-        <div class="container">
-            <div class="reveal">
-                <p class="section-label">Projects</p>
-                <h2 class="section-title">Selected Work</h2>
-                <p class="section-sub">Academic and personal projects that showcase my engineering and design
-                    capabilities.</p>
-            </div>
+  <!-- ===== MARQUEE TECH STRIP ===== -->
+  <div class="marquee-section">
+    <div class="marquee-track" id="marqueeTrack">
+      <span class="marquee-item">Java</span>
+      <span class="marquee-item">Python</span>
+      <span class="marquee-item">Flutter</span>
+      <span class="marquee-item">Dart</span>
+      <span class="marquee-item">JavaScript</span>
+      <span class="marquee-item">MySQL</span>
+      <span class="marquee-item">Figma</span>
+      <span class="marquee-item">Google Maps API</span>
+      <span class="marquee-item">NoSQL</span>
+      <span class="marquee-item">Tkinter</span>
+      <span class="marquee-item">HTML &amp; CSS</span>
+      <span class="marquee-item">Axure RP</span>
+      <span class="marquee-item">VS Code</span>
+      <span class="marquee-item">IntelliJ IDEA</span>
+      <!-- Duplicate for seamless loop -->
+      <span class="marquee-item">Java</span>
+      <span class="marquee-item">Python</span>
+      <span class="marquee-item">Flutter</span>
+      <span class="marquee-item">Dart</span>
+      <span class="marquee-item">JavaScript</span>
+      <span class="marquee-item">MySQL</span>
+      <span class="marquee-item">Figma</span>
+      <span class="marquee-item">Google Maps API</span>
+      <span class="marquee-item">NoSQL</span>
+      <span class="marquee-item">Tkinter</span>
+      <span class="marquee-item">HTML &amp; CSS</span>
+      <span class="marquee-item">Axure RP</span>
+      <span class="marquee-item">VS Code</span>
+      <span class="marquee-item">IntelliJ IDEA</span>
+    </div>
+  </div>
 
-            <div class="projects-list">
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section skills-bg">
+    <div class="container">
+      <div class="reveal">
+        <p class="s-label">Expertise</p>
+        <h2 class="s-title">Technical &amp; Professional Skills</h2>
+        <p class="s-sub">A versatile toolkit for building modern, reliable software — from backend logic to pixel-perfect interfaces.</p>
+      </div>
 
-                <!-- Project 1 -->
-                <div class="project-item reveal from-left">
-                    <div class="project-img-wrap">
-                        <img src="assets/seygo-project.png" alt="SeyGo Travel Discovery App">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-tag">SDGP — Group Project</span>
-                        <h3>SeyGo Travel Discovery App</h3>
-                        <p>A full mobile app for discovering Sri Lanka's hidden gems, with smart route planning and
-                            offline navigation.</p>
-                        <ul class="project-list">
-                            <li>Google Maps API integration for route optimization</li>
-                            <li>Offline Mode for travel in remote areas</li>
-                            <li>Full stakeholder analysis and SLEP compliance</li>
-                        </ul>
-                        <div class="tech-row">
-                            <span class="tech-badge">Flutter</span>
-                            <span class="tech-badge">Dart</span>
-                            <span class="tech-badge">Google Maps API</span>
-                            <span class="tech-badge">NoSQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-item flip reveal from-right">
-                    <div class="project-img-wrap">
-                        <img src="assets/python-project.png" alt="Python Applications">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-tag">Software Development</span>
-                        <h3>Python Applications</h3>
-                        <p>GUI-based desktop applications built with a focus on clean code, data integrity, and user
-                            experience.</p>
-                        <ul class="project-list">
-                            <li>Graphical interfaces using Tkinter</li>
-                            <li>JSON-based persistent data storage</li>
-                            <li>Applied algorithms and control structures</li>
-                        </ul>
-                        <div class="tech-row">
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Tkinter</span>
-                            <span class="tech-badge">JSON</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-item reveal from-left">
-                    <div class="project-img-wrap">
-                        <img src="assets/uiux-project.png" alt="Mobile App Prototyping">
-                    </div>
-                    <div class="project-info">
-                        <span class="project-tag">UI/UX Design</span>
-                        <h3>Mobile App Prototyping</h3>
-                        <p>Interactive prototypes designed with user-centered principles, validated through HCI research
-                            and usability testing.</p>
-                        <ul class="project-list">
-                            <li>Wireframing and high-fidelity designs in Figma</li>
-                            <li>HCI principles applied for usability</li>
-                            <li>Interactive prototyping with Axure RP 11</li>
-                        </ul>
-                        <div class="tech-row">
-                            <span class="tech-badge">Figma</span>
-                            <span class="tech-badge">Axure RP 11</span>
-                            <span class="tech-badge">UI/UX</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+      <div class="cards-grid">
+        <div class="g-card reveal d1">
+          <div class="g-card-icon">💻</div>
+          <h3>Programming Languages</h3>
+          <p>Backend and frontend expertise across multiple languages and paradigms for scalable software solutions.</p>
+          <div class="pill-row">
+            <span class="pill">Java</span>
+            <span class="pill">Python</span>
+            <span class="pill">JavaScript</span>
+            <span class="pill">Dart</span>
+            <span class="pill">SQL</span>
+          </div>
         </div>
-    </section>
-
-    <!-- ===== BACKGROUND ===== -->
-    <section id="background" class="section">
-        <div class="container">
-            <div class="reveal">
-                <p class="section-label">Background</p>
-                <h2 class="section-title">Education &amp; Experience</h2>
-            </div>
-
-            <div class="skills-grid" style="margin-top:3rem;">
-                <!-- Card 1 -->
-                <div class="skill-card reveal delay-1">
-                    <span class="skill-icon">🎓</span>
-                    <h3>Higher Education</h3>
-                    <p style="color:var(--txt-muted); font-size:0.88rem; margin-bottom:0.75rem;">University of Westminster / IIT · 2025 – Present</p>
-                    <p>BSc (Hons) Computer Science. Coursework: OOP, Database Systems, HCI, Server-side Web Development, Data Structures.</p>
-                    <div class="pill-group">
-                        <span class="pill">UoW Degree</span>
-                        <span class="pill">Full-Time</span>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="skill-card reveal delay-2">
-                    <span class="skill-icon">📜</span>
-                    <h3>IIT Certifications</h3>
-                    <p style="color:var(--txt-muted); font-size:0.88rem; margin-bottom:0.75rem;">IIT Professional Development Unit</p>
-                    <p>Industry-recognised short courses covering core programming and security fundamentals.</p>
-                    <div class="pill-group">
-                        <span class="pill">Python (Merit)</span>
-                        <span class="pill">CyberSec L1</span>
-                        <span class="pill">Java OOP</span>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="skill-card reveal delay-3">
-                    <span class="skill-icon">☕</span>
-                    <h3>CMJD Professional
-                        <a href="https://www.ijse.lk/cmjd-professional.jsp" target="_blank" rel="noopener"
-                           style="font-size:0.72rem; font-weight:600; color:var(--blue); margin-left:0.4rem; text-decoration:none;">IJSE ↗</a>
-                    </h3>
-                    <p style="color:var(--txt-muted); font-size:0.88rem; margin-bottom:0.75rem;">Institute of Java &amp; Software Engineering · Ongoing</p>
-                    <p>Comprehensive Master Java Developer — in-depth OOP, design patterns (MVC, DAO, Singleton, Factory, Observer), DB &amp; network programming with RMI. Oracle certification prep. 6-month course, 3 real-world projects.</p>
-                    <div class="pill-group">
-                        <span class="pill">Java</span>
-                        <span class="pill">Design Patterns</span>
-                        <span class="pill">Oracle Cert</span>
-                        <span class="pill">RMI</span>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="skill-card reveal delay-4">
-                    <span class="skill-icon">💼</span>
-                    <h3>Data Entry Specialist</h3>
-                    <p style="color:var(--txt-muted); font-size:0.88rem; margin-bottom:0.75rem;">Freelance / Remote</p>
-                    <p>Data management, cleansing and formatting with proficiency in Excel, Google Sheets, and structured databases. Focus on accuracy and efficiency.</p>
-                    <div class="pill-group">
-                        <span class="pill">Excel</span>
-                        <span class="pill">Google Sheets</span>
-                        <span class="pill">Databases</span>
-                    </div>
-                </div>
-            </div>
+        <div class="g-card reveal d2">
+          <div class="g-card-icon">⚙️</div>
+          <h3>Tools &amp; Platforms</h3>
+          <p>Comfortable in modern development and design environments for rapid, high-quality iteration.</p>
+          <div class="pill-row">
+            <span class="pill">IntelliJ</span>
+            <span class="pill">VS Code</span>
+            <span class="pill">MySQL</span>
+            <span class="pill">Figma</span>
+            <span class="pill">Draw.io</span>
+          </div>
         </div>
-    </section>
-
-    <!-- ===== FOOTER / CONTACT ===== -->
-    <footer id="contact" class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="footer-cta reveal">
-                    <h2>Ready to connect?</h2>
-                    <a href="mailto:vinukashenuleofficial@gmail.com" class="email-button">
-                        Email Me&nbsp;
-                    </a>
-                    <div class="socials" style="margin-top:2rem;">
-                        <a href="https://linkedin.com/in/vinuka-akarawita" target="_blank">LinkedIn</a>
-                        <a href="https://github.com/VinukaShenule" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                <div class="footer-details reveal delay-1">
-                    <p><strong>Phone</strong><br>076 003 4515 · 070 451 3208</p>
-                    <br>
-                    <p><strong>Location</strong><br>785/3, Highlevel Road, Panagoda</p>
-                </div>
-            </div>
-            <div class="footer-bottom reveal">
-                <span>&copy; 2026 Vinuka Shenule Akarawita. All rights reserved.</span>
-                <span>BSc CS · IIT Sri Lanka</span>
-            </div>
+        <div class="g-card reveal d3">
+          <div class="g-card-icon">📱</div>
+          <h3>Frameworks</h3>
+          <p>Cross-platform mobile and web development with modern frameworks and design systems.</p>
+          <div class="pill-row">
+            <span class="pill">Flutter</span>
+            <span class="pill">Tkinter</span>
+            <span class="pill">Maps API</span>
+            <span class="pill">Axure RP</span>
+          </div>
         </div>
-    </footer>
+        <div class="g-card reveal d4">
+          <div class="g-card-icon">🧠</div>
+          <h3>Core Competencies</h3>
+          <p>Soft skills that complement technical expertise in team environments and client-facing projects.</p>
+          <div class="pill-row">
+            <span class="pill">Problem Solving</span>
+            <span class="pill">Leadership</span>
+            <span class="pill">Critical Thinking</span>
+            <span class="pill">Creativity</span>
+          </div>
+        </div>
+      </div>
 
-    <script src="script.js"></script>
+      <!-- Skill bars -->
+      <div class="skill-bars reveal" style="max-width:600px; margin-top:4rem;">
+        <div class="skill-bar-item" data-skill="Java / OOP" data-pct="85">
+          <div class="skill-bar-head"><span>Java / OOP</span><span>85%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-w="85"></div></div>
+        </div>
+        <div class="skill-bar-item" data-pct="80">
+          <div class="skill-bar-head"><span>Python</span><span>80%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-w="80"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-head"><span>Flutter / Dart</span><span>75%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-w="75"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-head"><span>HTML / CSS / JS</span><span>78%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-w="78"></div></div>
+        </div>
+        <div class="skill-bar-item">
+          <div class="skill-bar-head"><span>UI/UX Design</span><span>70%</span></div>
+          <div class="bar-track"><div class="bar-fill" data-w="70"></div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="reveal">
+        <p class="s-label">Selected Work</p>
+        <h2 class="s-title">Projects</h2>
+        <p class="s-sub">Academic and personal projects showcasing my engineering and design capabilities.</p>
+      </div>
+
+      <div class="projects-stack">
+
+        <!-- Project 1 -->
+        <div class="project-block reveal from-left">
+          <div class="proj-img">
+            <img src="assets/seygo-project.png" alt="SeyGo Travel App">
+          </div>
+          <div class="proj-info">
+            <p class="proj-number">01 / 03</p>
+            <span class="proj-tag">SDGP Group Project</span>
+            <h3>SeyGo Travel Discovery</h3>
+            <p>A full mobile app for discovering Sri Lanka's hidden gems with intelligent route planning, destination cards, and offline navigation for remote travel areas.</p>
+            <ul class="proj-bullets">
+              <li>Google Maps API for dynamic route optimization</li>
+              <li>Offline Mode architecture for low-connectivity areas</li>
+              <li>Full stakeholder analysis and SLEP compliance</li>
+              <li>Integrated travel playlist and destination discovery</li>
+            </ul>
+            <div class="tech-pills">
+              <span class="tech-p">Flutter</span>
+              <span class="tech-p">Dart</span>
+              <span class="tech-p">Google Maps API</span>
+              <span class="tech-p">NoSQL</span>
+              <span class="tech-p">System Design</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-block flip reveal from-right">
+          <div class="proj-img">
+            <img src="assets/python-project.png" alt="Python Applications">
+          </div>
+          <div class="proj-info">
+            <p class="proj-number">02 / 03</p>
+            <span class="proj-tag">Software Development</span>
+            <h3>Python Applications</h3>
+            <p>GUI-based desktop applications focused on clean code practices, structured data handling, and intuitive user interaction.</p>
+            <ul class="proj-bullets">
+              <li>Graphical interfaces built with Tkinter</li>
+              <li>JSON-based persistent data storage</li>
+              <li>Applied algorithms and control flow structures</li>
+            </ul>
+            <div class="tech-pills">
+              <span class="tech-p">Python</span>
+              <span class="tech-p">Tkinter</span>
+              <span class="tech-p">JSON</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-block reveal from-left">
+          <div class="proj-img">
+            <img src="assets/uiux-project.png" alt="UI/UX Prototyping">
+          </div>
+          <div class="proj-info">
+            <p class="proj-number">03 / 03</p>
+            <span class="proj-tag">UI/UX Design</span>
+            <h3>Mobile App Prototyping</h3>
+            <p>Interactive prototypes designed with user-centered principles, validated through HCI research and usability studies.</p>
+            <ul class="proj-bullets">
+              <li>Low and high-fidelity wireframing in Figma</li>
+              <li>HCI principles applied for usability</li>
+              <li>Interactive prototyping with Axure RP 11</li>
+            </ul>
+            <div class="tech-pills">
+              <span class="tech-p">Figma</span>
+              <span class="tech-p">Axure RP 11</span>
+              <span class="tech-p">UI/UX</span>
+              <span class="tech-p">HCI</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BACKGROUND ===== -->
+  <section id="background" class="section skills-bg">
+    <div class="container">
+      <div class="reveal">
+        <p class="s-label">Background</p>
+        <h2 class="s-title">Education &amp; Experience</h2>
+        <p class="s-sub">My academic journey, certifications, and professional experience.</p>
+      </div>
+
+      <div class="edu-grid">
+
+        <div class="g-card reveal d1">
+          <div class="g-card-icon">🎓</div>
+          <h3>Higher Education</h3>
+          <p style="color:var(--txt-dim);font-size:0.82rem;margin-bottom:0.5rem;">University of Westminster / IIT · 2025 – Present</p>
+          <p>BSc (Hons) Computer Science. Covering OOP, Database Systems, HCI, Server-side Web Development, and Data Structures.</p>
+          <div class="pill-row">
+            <span class="pill">UoW Degree</span>
+            <span class="pill">Full-Time</span>
+          </div>
+        </div>
+
+        <div class="g-card reveal d2">
+          <div class="g-card-icon">📜</div>
+          <h3>IIT Certifications</h3>
+          <p style="color:var(--txt-dim);font-size:0.82rem;margin-bottom:0.5rem;">IIT Professional Development Unit</p>
+          <p>Industry-recognised short courses covering core programming and network security fundamentals.</p>
+          <div class="pill-row">
+            <span class="pill">Python Merit</span>
+            <span class="pill">CyberSec L1</span>
+            <span class="pill">Java OOP</span>
+          </div>
+        </div>
+
+        <div class="g-card reveal d3">
+          <div class="g-card-icon">☕</div>
+          <h3>CMJD Professional
+            <a href="https://www.ijse.lk/cmjd-professional.jsp" target="_blank" rel="noopener"
+               style="font-size:0.7rem;font-weight:700;color:var(--sky);margin-left:0.4rem;text-decoration:none;">IJSE ↗</a>
+          </h3>
+          <p style="color:var(--txt-dim);font-size:0.82rem;margin-bottom:0.5rem;">Institute of Java &amp; Software Engineering · Ongoing</p>
+          <p>Comprehensive Master Java Developer — in-depth OOP, design patterns (MVC, DAO, Singleton, Factory, Observer), DB &amp; network programming with RMI. Oracle certification prep. 6-month course with 3 real-world projects.</p>
+          <div class="pill-row">
+            <span class="pill">Java</span>
+            <span class="pill">Design Patterns</span>
+            <span class="pill">Oracle Cert</span>
+            <span class="pill">RMI</span>
+          </div>
+        </div>
+
+        <div class="g-card reveal d4">
+          <div class="g-card-icon">💼</div>
+          <h3>Data Entry Specialist</h3>
+          <p style="color:var(--txt-dim);font-size:0.82rem;margin-bottom:0.5rem;">Freelance / Remote</p>
+          <p>Data management, cleansing, and formatting with proficiency in Excel, Google Sheets, and structured databases.</p>
+          <div class="pill-row">
+            <span class="pill">Excel</span>
+            <span class="pill">Google Sheets</span>
+            <span class="pill">Databases</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER / CONTACT ===== -->
+  <footer id="contact" class="footer">
+    <div class="container">
+      <div class="footer-grid reveal">
+        <div>
+          <h2 class="contact-title">Let's build something <em>great</em> together.</h2>
+          <a href="mailto:vinukashenuleofficial@gmail.com" class="btn-sky" style="width:fit-content;">
+            Send Me an Email ↗
+          </a>
+          <div class="contact-links" style="margin-top:2.5rem;">
+            <a href="https://linkedin.com/in/vinuka-akarawita" target="_blank" class="contact-link">LinkedIn</a>
+            <a href="https://github.com/VinukaShenule" target="_blank" class="contact-link">GitHub</a>
+          </div>
+        </div>
+        <div class="footer-info reveal d2">
+          <h4>Contact</h4>
+          <p>
+            vinukashenuleofficial@gmail.com<br>
+            076 003 4515 · 070 451 3208<br><br>
+            785/3, Highlevel Road,<br>
+            Panagoda, Homagama<br>
+            Sri Lanka
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom reveal">
+        <span>&copy; 2026 Vinuka Shenule Akarawita</span>
+        <span>BSc CS · IIT Sri Lanka · <a href="https://github.com/VinukaShenule" target="_blank">GitHub</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
